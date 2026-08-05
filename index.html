@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hemishere</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #EAE4D8;
+      --ink: #332E28;
+      --ink-soft: #5A5347;
+      --signature: #6E5A63;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 72px 24px 120px;
+    }
+
+    .site-header {
+      text-align: center;
+      margin-bottom: 88px;
+    }
+
+    .site-title {
+      font-size: clamp(28px, 6vw, 36px);
+      font-weight: 500;
+      font-style: italic;
+      margin: 0 0 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .site-tagline {
+      font-size: 15px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    .entry + .entry {
+      margin-top: 96px;
+      padding-top: 96px;
+      border-top: 1px solid rgba(51, 46, 40, 0.12);
+    }
+
+    .entry-date {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 0 0 10px;
+    }
+
+    .entry-title {
+      font-size: clamp(24px, 5vw, 30px);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.35;
+      margin: 0 0 36px;
+      letter-spacing: 0.01em;
+    }
+
+    .entry-body p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--ink);
+      margin: 0 0 30px;
+    }
+
+    .entry-image {
+      display: block;
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      margin: 48px auto;
+    }
+
+    .entry-signature {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      color: var(--signature);
+      margin-top: 8px;
+    }
+
+    .site-footer {
+      margin-top: 96px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 48px 20px 88px;
+      }
+      .entry + .entry {
+        margin-top: 72px;
+        padding-top: 72px;
+      }
+      .entry-body p {
+        font-size: 16px;
+      }
+      .entry-image {
+        margin: 36px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header">
+      <h1 class="site-title">hemishere</h1>
+      <p class="site-tagline">notes, ideas, and things worth sitting with</p>
+    </header>
+
+    <main>
+      <article class="entry">
+        <span class="entry-date">30 July 2026</span>
+        <h2 class="entry-title">The eye of the storm</h2>
+
+        <div class="entry-body">
+          <p>People feel that stepping away from their world is a way to recharge, to reset. But even the phrase gives it away — "away" is a direction, and it points further from you, not closer. The activities that promise distance only expand your range of distractions. You eventually have to return to your world. And even if you come back with a little more energy to handle things, you're still handling the same world you left — except now you have another escape. Another direction to run toward when you feel overwhelmed.</p>
+
+          <img class="entry-image" src="images/eye-of-the-storm-escape-grows.svg" alt="Diagram showing that when you keep choosing escape, your world and your escapes both grow larger while your sense of self stays the same size.">
+
+          <p>The words we use to describe what we need already decide which direction we're facing. Getting away. Escaping. Stepping away from it all. Every one of those phrases points outward, away from yourself, before you've even packed a bag. If the goal is actually to return to yourself, the language has to point inward too.</p>
+
+          <p>My approach is different. You have to step into the eye of the storm. Not away from your world — into it, and through it, to what's at the center. The center of your world. Not deeper into your work, your career, your business, your school. Those are elements of your world, but they aren't your life. People get the wrong idea that these activities and spaces are their world — their life. But even when these things change, it doesn't mean your world changes. You are still you. You're growing with each change, but you are fundamentally at the root of it all.</p>
+
+          <img class="entry-image" src="images/eye-of-the-storm-base.svg" alt="Diagram showing both the path outward and the path inward starting from the same layer, your world, with a small center labeled you.">
+
+          <p>You are at the center of your world. It's the ability to really sit within that and listen to what you need. Not the distractions. Not what you think is your world, because that's what's keeping you distracted. But you. How are you? What do you need? Where are you with yourself?</p>
+
+          <p>Stepping into the center of your world is the most sustainable and scalable thing you can do for yourself. Everything else will reflect that energy and time spent on self, because it is you who is at the center of your world.</p>
+
+          <img class="entry-image" src="images/eye-of-the-storm-return-grows.svg" alt="Diagram showing that when you choose yourself, your core grows while your world keeps its same size and your escapes take up less space.">
+
+          <p>None of this means the activity itself is wrong. It can still look like a vacation, a trip, time away from your usual routine. What changes is the phrasing you carry into it. Are you stepping into that space to hear yourself more clearly, to calm your nervous system? Or are you stepping away, escaping, running from your world? The activity can look identical from the outside. But the words you use going in decide which direction you're actually walking — toward yourself, or further from it. That small shift in language is so powerful.</p>
+        </div>
+
+        <p class="entry-signature">anthony</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      Updated by hand, one entry at a time.
+    </footer>
+
+  </div>
+</body>
+</html>
