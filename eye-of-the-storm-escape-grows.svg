@@ -1,0 +1,16 @@
+<svg width="100%" viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg">
+<title>Choosing escape repeatedly grows your world and escapes, self stays the same</title>
+<desc>Three outlined, unfilled concentric circles. The self circle stays the same size while your world and escapes both grow larger.</desc>
+
+<circle cx="340" cy="325" r="280" fill="none" stroke="#854F0B" stroke-width="1"/>
+<text x="453" y="130" text-anchor="middle" fill="#854F0B" font-family="Georgia, serif" font-size="16" font-weight="600">escapes</text>
+
+<circle cx="340" cy="325" r="170" fill="none" stroke="#993C1D" stroke-width="1"/>
+<text x="340" y="212" text-anchor="middle" fill="#993C1D" font-family="Georgia, serif" font-size="16" font-weight="600">your world</text>
+
+<circle cx="340" cy="325" r="55" fill="none" stroke="#0F6E56" stroke-width="1"/>
+<text x="340" y="330" text-anchor="middle" fill="#0F6E56" font-family="Georgia, serif" font-size="16" font-weight="600">self</text>
+
+<text x="340" y="655" text-anchor="middle" fill="#5A5347" font-family="Georgia, serif" font-size="14" font-style="italic">Your world and escapes both grow —</text>
+<text x="340" y="673" text-anchor="middle" fill="#5A5347" font-family="Georgia, serif" font-size="14" font-style="italic">self stays the same size.</text>
+</svg>
