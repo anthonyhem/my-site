@@ -1,0 +1,36 @@
+<svg width="100%" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg">
+<title>State chart from pre-journey through firsthand experience to realities</title>
+<desc>Pre-journey branches into open minded, aligned with the authentic connector lower in the container, and preconceptions, a straight line into a single-line filtered experiences box with a bypass to fantasy.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<rect x="40" y="180" width="110" height="44" rx="8" fill="none" stroke="#5A5347" stroke-width="1"/>
+<text x="95" y="206" text-anchor="middle" fill="#5A5347" font-family="Georgia, serif" font-size="15" font-weight="600">pre-journey</text>
+
+<rect x="270" y="60" width="250" height="220" rx="20" fill="none" stroke="#5A5347" stroke-width="1"/>
+<text x="282" y="86" fill="#5A5347" font-family="Georgia, serif" font-size="15" font-weight="600">firsthand experience</text>
+
+<rect x="285" y="192" width="220" height="44" rx="12" fill="none" stroke="#854F0B" stroke-width="1"/>
+<text x="395" y="219" text-anchor="middle" fill="#854F0B" font-family="Georgia, serif" font-size="15" font-weight="600">filtered experiences</text>
+
+<rect x="530" y="60" width="105" height="220" rx="20" fill="none" stroke="#5A5347" stroke-width="1"/>
+<text x="542" y="86" fill="#5A5347" font-family="Georgia, serif" font-size="15" font-weight="600">realities</text>
+
+<rect x="540" y="110" width="90" height="44" rx="8" fill="none" stroke="#0F6E56" stroke-width="1"/>
+<text x="585" y="137" text-anchor="middle" fill="#0F6E56" font-family="Georgia, serif" font-size="15" font-weight="600">authentic</text>
+
+<rect x="540" y="192" width="90" height="44" rx="8" fill="none" stroke="#854F0B" stroke-width="1"/>
+<text x="585" y="219" text-anchor="middle" fill="#854F0B" font-family="Georgia, serif" font-size="15" font-weight="600">fantasy</text>
+
+<path d="M150,190 L175,190 L175,132 L270,132" fill="none" stroke="#5A5347" stroke-width="1.25" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="210" y="122" text-anchor="middle" fill="#5A5347" font-family="Georgia, serif" font-size="13" font-style="italic">open minded</text>
+
+<path d="M150,214 L285,214" fill="none" stroke="#5A5347" stroke-width="1.25" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M250,214 L250,340 L585,340 L585,238" fill="none" stroke="#5A5347" stroke-width="1.25" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text x="218" y="204" text-anchor="middle" fill="#5A5347" font-family="Georgia, serif" font-size="13" font-style="italic">preconceptions</text>
+
+<line x1="520" y1="132" x2="538" y2="132" stroke="#5A5347" stroke-width="1.25" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<line x1="505" y1="214" x2="538" y2="214" stroke="#5A5347" stroke-width="1.25" stroke-linecap="round" marker-end="url(#arrow)"/>
+</svg>
