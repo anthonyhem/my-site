@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hemishere</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +18,9 @@
       --signature: #6E5A63;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
     }
@@ -49,23 +45,12 @@
     }
 
     .site-title {
-      font-size: clamp(28px, 6vw, 36px);
+      font-size: clamp(24px, 6vw, 32px);
       font-weight: 500;
       font-style: italic;
-      margin: 0 0 10px;
-      letter-spacing: 0.01em;
-    }
-
-    .site-tagline {
-      font-size: 15px;
-      color: var(--ink-soft);
       margin: 0;
-    }
-
-    .entry + .entry {
-      margin-top: 96px;
-      padding-top: 96px;
-      border-top: 1px solid rgba(51, 46, 40, 0.12);
+      letter-spacing: 0.01em;
+      line-height: 1.4;
     }
 
     .entry-date {
@@ -93,6 +78,10 @@
       margin: 0 0 30px;
     }
 
+    .entry-body em {
+      font-style: italic;
+    }
+
     .entry-image {
       display: block;
       width: 100%;
@@ -101,11 +90,48 @@
       margin: 48px auto;
     }
 
-    .entry-signature {
-      font-family: 'Caveat', cursive;
-      font-size: 24px;
-      color: var(--signature);
-      margin-top: 8px;
+    .video-embed {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 8px 0 44px;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-link {
+      display: block;
+      text-decoration: none;
+      margin: 8px 0 44px;
+    }
+
+    .video-link .entry-image {
+      max-width: 100%;
+      margin: 0 0 10px;
+    }
+
+    .video-link-label {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      transition: color 0.2s ease;
+    }
+
+    .video-link:hover .video-link-label,
+    .video-link:focus-visible .video-link-label {
+      color: var(--ink);
     }
 
     .site-footer {
@@ -115,20 +141,113 @@
       color: var(--ink-soft);
     }
 
+    /* -------- View switching (no page reload) -------- */
+
+    .view[hidden] { display: none; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { animation: fadeIn 0.5s ease; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* -------- Entry navigation -------- */
+
+    .entry-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 72px;
+    }
+
+    .nav-arrow {
+      font-size: 20px;
+      line-height: 1;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-arrow:hover, .nav-arrow:focus-visible { color: var(--ink); }
+    .nav-arrow--disabled { opacity: 0.25; pointer-events: none; }
+
+    .nav-legend {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .nav-legend:hover, .nav-legend:focus-visible {
+      color: var(--ink);
+      border-color: var(--ink-soft);
+    }
+
+    /* -------- Legend (all entries) -------- */
+
+    .legend-title {
+      font-size: clamp(22px, 5vw, 26px);
+      font-weight: 500;
+      font-style: italic;
+      text-align: center;
+      margin: 0 0 56px;
+    }
+
+    .legend-list {
+      list-style: none;
+      margin: 0 0 64px;
+      padding: 0;
+    }
+    .legend-list li + li {
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(51, 46, 40, 0.12);
+    }
+    .legend-list a {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+    }
+    .legend-date {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 6px;
+    }
+    .legend-entry-title {
+      display: block;
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .legend-list a:hover .legend-entry-title,
+    .legend-list a:focus-visible .legend-entry-title {
+      color: var(--signature);
+    }
+
+    .nav-back {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+    .nav-back:hover, .nav-back:focus-visible { color: var(--ink); }
+
     @media (max-width: 480px) {
-      .wrap {
-        padding: 48px 20px 88px;
-      }
-      .entry + .entry {
-        margin-top: 72px;
-        padding-top: 72px;
-      }
-      .entry-body p {
-        font-size: 16px;
-      }
-      .entry-image {
-        margin: 36px auto;
-      }
+      .wrap { padding: 48px 20px 88px; }
+      .entry-body p { font-size: 16px; }
+      .entry-image { margin: 36px auto; }
     }
   </style>
 </head>
@@ -139,19 +258,61 @@
       <h1 class="site-title">My notes, ideas, and things worth sitting with</h1>
     </header>
 
-    <main>
-      <article class="entry">
-        <span class="entry-date">30 July 2026</span>
-        <h2 class="entry-title">The eye of the storm</h2>
+    <main id="app">
+      <!-- content is generated automatically from the ENTRIES list below -->
+    </main>
 
-        <div class="entry-body">
+    <footer class="site-footer">
+      updated by hand, one entry at a time.
+    </footer>
+
+  </div>
+
+  <script>
+    /* =====================================================================
+       ADD A NEW ENTRY HERE
+       ===================================================================== */
+
+    var ENTRIES = [
+      {
+        id: 'bangalter-mythologies',
+        date: '6 August 2026',
+        title: 'The respect of not being in control',
+        body: `
+          <a class="video-link" href="https://youtu.be/Etl79iuZxaU" target="_blank" rel="noopener">
+            <img class="entry-image" src="https://img.youtube.com/vi/Etl79iuZxaU/maxresdefault.jpg" alt="Thumbnail for the Thomas Bangalter interview — click to watch on YouTube">
+            <span class="video-link-label">watch on YouTube &rarr;</span>
+          </a>
+
+          <p>I recently watched an interview with Thomas Bangalter, and what stayed with me wasn't really about music at all.</p>
+
+          <p>He never set out to make music for a living. Loving art for art's sake without needing an audience to validate it. But even without thinking about an audience, he pointed out that any creative act is still a response to the environment around you at a given time. There's a kind of respect for craftsmanship in that — recognizing what's magic about a period of time and body of work, and asking how to translate it into today. What's disappearing that's actually great, important, worth carrying forward? That excitement moving from one person to the next to the next — that's genuine communication. The joy of a bass player reaching the sound engineer, reaching the audience, reaching the people in their lives. Art carrying symbolic value between society, technology, and people.</p>
+
+          <p>Daft Punk, as he framed it, was performance art. An act. A line drawn between fiction and reality — not acting behind opacity for its own sake, but a kind of disciplined anonymity. Masking identity so the music could reach people without centering it on the self. Pop culture as the director; people making the choices. Creating situations that reflect people back to themselves.</p>
+
+          <p>He talked about dance the same way — raw, only existing in that one moment, never experienced the same way twice. A relationship to creation happening at a depth that words can't really reach. Creative process as understanding through feeling, not knowing where it's going to take you, and not taking any of it for granted.</p>
+
+          <p>The part that stuck with me most was how he talked about control — or the total absence of it. AI, he said, is fundamentally about the output. His process is the opposite. He doesn't decide anything, not really. He respects that we're not in control of anything — the feeling drives the process, and the output is just the residue of the whole journey. Any preconceived idea, logic, or theory has to be confronted with the actual result, and if the feeling isn't there, the output and the approach has to change. Why would you want to bypass the exact moment you're passionate about? That's what AI risks doing — skipping the process because it's optimizing for the result. He passively but profoundly talks about how he hasn't had a change of thought recently: to try not to walk in with preconceived ideas, because the answer was never going to be found in them anyway.</p>
+
+          <p>He even extended that to technology and society — that unpredictability is what saves us. Every real shift in history has come from some collective, human derailment from what was expected. We need to keep surprising ourselves. A machine can't do that for us.</p>
+
+          <p>It was the respect for not being in control of anything — that humanness and creation both live inside improvisation, inside process. A kind of dance with your own feedback loop: listening, moving with the tug of a feeling that isn't verbal, trying to be a good listener — not to words, but to the emotions underneath them, and to whatever's speaking to you from the world around you. Testing what sprouts from within, working with the results without being married to them, staying loyal instead to the honesty of what you actually felt along the way. Not diminishing it. Not disrespecting it. It takes time. It takes presence. No preconceptions, no attachment to outcome — and that's exactly where it collides with something result-driven like AI. That tool has its place, but creation isn't it.</p>
+
+          <p>This interview barely touched the technical side of music, which is what he's famous for. It was about being human — about the respect owed to some kind of source, and how being a creative person really just means keeping the connection between that source and other people authentic. Using your own existence as a channel. It felt more spiritual than musical to me. I walked away seeing him less as a musician and more as an artist — someone who never limited himself to one medium, and let himself move freely through whatever he was feeling.</p>
+        `
+      },
+      {
+        id: 'eye-of-the-storm',
+        date: '30 July 2026',
+        title: 'The eye of the storm',
+        body: `
           <p>People feel that stepping away from their world is a way to recharge, to reset. "Away" is a direction, and it points further from you, not closer. The activities that promise distance only expand your range of distractions. You eventually have to return to your world. And even if you come back with a little more energy to handle things, you're still handling the same world you left — except now you have another escape. Another direction to run toward when you feel overwhelmed.</p>
 
           <img class="entry-image" src="images/eye-of-the-storm-base.svg" alt="Diagram showing both the path outward and the path inward starting from the same layer, your world, with a small center labeled you.">
 
           <p>The words we use to describe what we need already decide which direction we're facing. "Getting away". "Escaping". "Stepping away from it all". Every one of those phrases points outward, away from yourself, before you've even packed a bag. If the goal is actually to return to yourself, the language has to point inward too.</p>
 
-          <p>I believe that you have to step into the eye of the storm. Not away from it, not away from your world — into it, and through it, to what's at the center. The center of your world. Not deeper into your work, your career, your business, your school. Those are elements of your world, but they aren't your life. People can get so caught up that they mistaken these activities and spaces as their world — their life. But even when these things change, it doesn't mean you change. You are still you. You're may or may not be growing with each change, but you are fundamentally at the root of it all.</p>
+          <p>I believe that you have to step into the eye of the storm. Not away from it, not away from your world — into it, and through it, to what's at the center. The center of your world. Not deeper into your work, your career, your business, your school. Those are elements of your world, but they aren't your life. People can get so caught up that they mistaken these activities and spaces as their world — their life. But even when these things change, it doesn't mean you change. You are still you. You may or may not be growing with each change, but you are fundamentally at the root of it all.</p>
 
           <img class="entry-image" src="images/eye-of-the-storm-escape-grows.svg" alt="Diagram showing that when you keep choosing escape, your world and your escapes both grow larger while your sense of self stays the same size.">
 
@@ -162,15 +323,97 @@
           <img class="entry-image" src="images/eye-of-the-storm-return-grows.svg" alt="Diagram showing that when you choose yourself, your core grows while your world keeps its same size and your escapes take up less space.">
 
           <p>None of this means the activity itself is wrong. It can still look like a vacation, a trip, time away from your usual routine. What changes is the phrasing you carry into it. Are you stepping into that space to hear yourself more clearly, to calm your nervous system? Or are you stepping away, escaping, running from your world? The activity can look identical from the outside. But the words you choose going in decide which direction you're actually walking — toward yourself, or further from it.</p>
-        </div>
+        `
+      }
+    ];
 
-      </article>
-    </main>
+    /* ===================== rendering engine — no need to touch ===================== */
 
-    <footer class="site-footer entry-signature">
-      updated by hand, one entry at a time.
-    </footer>
+    (function () {
+      var app = document.getElementById('app');
 
-  </div>
+      function entryHTML(entry, index) {
+        var older = ENTRIES[index + 1];
+        var newer = ENTRIES[index - 1];
+        var prevLink = older
+          ? '<a href="#entry-' + older.id + '" class="nav-arrow" data-target="entry-' + older.id + '" aria-label="Older entry">&larr;</a>'
+          : '<span class="nav-arrow nav-arrow--disabled" aria-hidden="true">&larr;</span>';
+        var nextLink = newer
+          ? '<a href="#entry-' + newer.id + '" class="nav-arrow" data-target="entry-' + newer.id + '" aria-label="Newer entry">&rarr;</a>'
+          : '<span class="nav-arrow nav-arrow--disabled" aria-hidden="true">&rarr;</span>';
+
+        return (
+          '<div class="view" id="entry-' + entry.id + '">' +
+            '<article class="entry">' +
+              '<span class="entry-date">' + entry.date + '</span>' +
+              '<h2 class="entry-title">' + entry.title + '</h2>' +
+              '<div class="entry-body">' + entry.body + '</div>' +
+            '</article>' +
+            '<nav class="entry-nav">' +
+              prevLink +
+              '<a href="#legend" class="nav-legend" data-target="legend">all entries</a>' +
+              nextLink +
+            '</nav>' +
+          '</div>'
+        );
+      }
+
+      function legendHTML() {
+        var items = ENTRIES.map(function (entry) {
+          return (
+            '<li><a href="#entry-' + entry.id + '" data-target="entry-' + entry.id + '">' +
+              '<span class="legend-date">' + entry.date + '</span>' +
+              '<span class="legend-entry-title">' + entry.title + '</span>' +
+            '</a></li>'
+          );
+        }).join('');
+
+        return (
+          '<div class="view" id="legend" hidden>' +
+            '<h2 class="legend-title">All entries</h2>' +
+            '<ul class="legend-list">' + items + '</ul>' +
+            '<a href="#entry-' + ENTRIES[0].id + '" class="nav-back" data-target="entry-' + ENTRIES[0].id + '">&larr; back to latest</a>' +
+          '</div>'
+        );
+      }
+
+      function render() {
+        var html = ENTRIES.map(entryHTML).join('') + legendHTML();
+        app.innerHTML = html;
+      }
+
+      function showView(id) {
+        document.querySelectorAll('.view').forEach(function (v) {
+          v.hidden = (v.id !== id);
+        });
+        var target = document.getElementById(id);
+        if (target) {
+          target.classList.remove('fade-in');
+          void target.offsetWidth;
+          target.classList.add('fade-in');
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      }
+
+      function handleHash() {
+        var id = location.hash.replace('#', '') || ('entry-' + ENTRIES[0].id);
+        showView(id);
+      }
+
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('[data-target]');
+        if (!link || link.classList.contains('nav-arrow--disabled')) return;
+        e.preventDefault();
+        var id = link.getAttribute('data-target');
+        history.pushState(null, '', '#' + id);
+        showView(id);
+      });
+
+      window.addEventListener('popstate', handleHash);
+
+      render();
+      handleHash();
+    })();
+  </script>
 </body>
 </html>
